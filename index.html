@@ -118,6 +118,31 @@ nav ul li a:hover { color: #ffd700; }
             font-size: 15px;
         }
         .categoria ul li span { color: #5c3317; font-weight: bold; }
+        /* HORARIOS */
+.horarios {
+    background-color: #fff8f0;
+    padding: 80px 40px;
+    text-align: center;
+}
+.horarios h2 { font-size: 36px; color: #5c3317; margin-bottom: 40px; }
+.horarios-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.horario-item {
+    background: white;
+    border-radius: 15px;
+    padding: 30px 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.dia { font-size: 18px; font-weight: bold; color: #5c3317; }
+.hora { font-size: 22px; color: #3d2b1f; }
+.cerrado .hora { color: #cc0000; }
 
         /* UBICACION */
         .ubicacion {
@@ -188,6 +213,7 @@ nav ul li a:hover { color: #ffd700; }
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#sobre">Nosotros</a></li>
             <li><a href="#productos">Productos</a></li>
+            <li><a href="#horarios">Horarios</a></li>
             <li><a href="#ubicacion">Ubicación</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
@@ -263,6 +289,20 @@ nav ul li a:hover { color: #ffd700; }
 
         </div>
     </section>
+    <!-- HORARIOS -->
+<section class="horarios" id="horarios">
+    <h2>🕐 Horarios de Atención</h2>
+    <div class="horarios-grid">
+        <div class="horario-item">
+            <span class="dia">Lunes a Sábado</span>
+            <span class="hora">7:00 - 16:00</span>
+        </div>
+        <div class="horario-item cerrado">
+            <span class="dia">Domingo</span>
+            <span class="hora">Cerrado</span>
+        </div>
+    </div>
+</section>
 
     <!-- UBICACION -->
     <section class="ubicacion" id="ubicacion">
