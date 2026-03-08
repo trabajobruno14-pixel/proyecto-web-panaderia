@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panadería Shaloom</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { font-family: 'Georgia', serif; color: #3d2b1f; }
+        
+        /* NAVBAR */
+        nav {
+            background-color: #5c3317;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav .logo { color: #f5deb3; font-size: 24px; font-weight: bold; }
+        nav ul { list-style: none; display: flex; gap: 30px; }
+        nav ul li a { color: #f5deb3; text-decoration: none; font-size: 16px; }
+        nav ul li a:hover { color: #ffd700; }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1400') center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        .hero h1 { font-size: 60px; margin-bottom: 20px; }
+        .hero p { font-size: 22px; margin-bottom: 10px; }
+        .hero .desde { font-size: 16px; color: #f5deb3; margin-top: 10px; }
+        .hero .btn {
+            margin-top: 30px;
+            padding: 15px 40px;
+            background-color: #ffd700;
+            color: #3d2b1f;
+            border: none;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero .btn:hover { background-color: #ffb300; }
+
+        /* SOBRE NOSOTROS */
+        .sobre {
+            background-color: #fdf6ec;
+            padding: 80px 40px;
+            text-align: center;
+        }
+        .sobre h2 { font-size: 36px; color: #5c3317; margin-bottom: 20px; }
+        .sobre p { font-size: 18px; max-width: 700px; margin: 0 auto; line-height: 1.8; }
+
+        /* PRODUCTOS */
+        .productos {
+            background-color: #fff8f0;
+            padding: 80px 40px;
+            text-align: center;
+        }
+        .productos h2 { font-size: 36px; color: #5c3317; margin-bottom: 50px; }
+        .categorias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .categoria {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .categoria h3 { font-size: 22px; color: #5c3317; margin-bottom: 15px; }
+        .categoria ul { list-style: none; text-align: left; }
+        .categoria ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0e0cc;
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+        }
+        .categoria ul li span { color: #5c3317; font-weight: bold; }
+
+        /* UBICACION */
+        .ubicacion {
+            background-color: #5c3317;
+            padding: 80px 40px;
+            text-align: center;
+            color: #f5deb3;
+        }
+        .ubicacion h2 { font-size: 36px; margin-bottom: 20px; }
+        .ubicacion p { font-size: 20px; }
+
+        /* CONTACTO */
+        .contacto {
+            background-color: #fdf6ec;
+            padding: 80px 40px;
+            text-align: center;
+        }
+        .contacto h2 { font-size: 36px; color: #5c3317; margin-bottom: 30px; }
+        .contacto a {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 40px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .contacto a:hover { background-color: #1ebe5d; }
+
+        /* FOOTER */
+        footer {
+            background-color: #3d2b1f;
+            color: #f5deb3;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">🍞 Panadería Shaloom</div>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre">Nosotros</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#ubicacion">Ubicación</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+        <h1>Panadería Shaloom</h1>
+        <p>Los mejores panes 🍞</p>
+        <p>Comprometidos con la calidad y el sabor</p>
+        <div class="desde">Desde 1995, llevamos amor y tradición a tu mesa</div>
+        <a href="#productos" class="btn">Ver Productos</a>
+    </section>
+
+    <!-- SOBRE NOSOTROS -->
+    <section class="sobre" id="sobre">
+        <h2>Sobre Nosotros</h2>
+        <p>Desde 1995 elaboramos pan artesanal con los mejores ingredientes. 
+        Somos una panadería familiar ubicada en Km 19 Acaray, comprometidos 
+        con llevar calidad, sabor y tradición a cada mesa.</p>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="productos" id="productos">
+        <h2>Nuestros Productos</h2>
+        <div class="categorias">
+
+            <div class="categoria">
+                <h3>🍞 Los mejores panes</h3>
+                <ul>
+                    <li>Pancito 1,5 kg <span>14.000</span></li>
+                    <li>Pancito 2,5 kg <span>23.000</span></li>
+                    <li>Galleta común 2,5 <span>23.000</span></li>
+                    <li>Galleta común 1,5 <span>14.000</span></li>
+                    <li>Cañón 2,5 <span>23.000</span></li>
+                    <li>Cañón 1,5 <span>14.000</span></li>
+                    <li>Panchi 1,5 <span>14.000</span></li>
+                    <li>Panchi 2,5 <span>23.000</span></li>
+                    <li>Galletón 1,5 <span>14.000</span></li>
+                    <li>Galletón 2,5 <span>23.000</span></li>
+                    <li>Galleta especial 2,5 <span>25.000</span></li>
+                    <li>Galleta especial 1,5 <span>15.000</span></li>
+                </ul>
+            </div>
+
+            <div class="categoria">
+                <h3>🥐 Coquitos</h3>
+                <ul>
+                    <li>Coquito surtido 1,5 <span>15.000</span></li>
+                    <li>Coquito surtido 2,5 <span>24.000</span></li>
+                    <li>Palitín 1,5 <span>15.000</span></li>
+                    <li>Palitín 2,5 <span>24.000</span></li>
+                    <li>Coquitín 1,5 <span>24.000</span></li>
+                    <li>Coquitín 2,5 <span>24.000</span></li>
+                </ul>
+            </div>
+
+            <div class="categoria">
+                <h3>🍔 Pan de Hamburguesa</h3>
+                <ul>
+                    <li>Grande x30 unidades <span>30.000</span></li>
+                    <li>Medio x15 unidades <span>15.000</span></li>
+                </ul>
+            </div>
+
+            <div class="categoria">
+                <h3>🌾 Pan Molido</h3>
+                <ul>
+                    <li>Molida 5 kg <span>30.000</span></li>
+                    <li>Molida 2,5 kg <span>15.000</span></li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- UBICACION -->
+    <section class="ubicacion" id="ubicacion">
+        <h2>📍 Dónde estamos</h2>
+        <p>Km 19 Acaray</p>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contacto" id="contacto">
+        <h2>Contactanos</h2>
+        <a href="https://wa.me/595973652365" target="_blank">💬 WhatsApp: 0973 652 365</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Panadería Shaloom · Desde 1995 · Km 19 Acaray</p>
+    </footer>
+
+</body>
+</html>
