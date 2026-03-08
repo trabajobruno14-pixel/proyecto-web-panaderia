@@ -139,6 +139,11 @@ nav ul li a:hover { color: #ffd700; }
     display: flex;
     flex-direction: column;
     gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.horario-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 .dia { font-size: 18px; font-weight: bold; color: #5c3317; }
 .hora { font-size: 22px; color: #3d2b1f; }
