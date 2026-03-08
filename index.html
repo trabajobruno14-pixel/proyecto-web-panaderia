@@ -148,6 +148,25 @@ nav ul li a:hover { color: #ffd700; }
         }
         .contacto a:hover { background-color: #1ebe5d; }
 
+        /* ANIMACIONES */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.categoria {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.categoria:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+.btn {
+    transition: all 0.3s ease;
+}
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
         /* FOOTER */
         footer {
             background-color: #3d2b1f;
@@ -183,7 +202,7 @@ nav ul li a:hover { color: #ffd700; }
     </section>
 
     <!-- SOBRE NOSOTROS -->
-    <section class="sobre" id="sobre">
+    <section class="sobre fade-in" id="sobre">
         <h2>Sobre Nosotros</h2>
         <p>Desde 1995 elaboramos pan artesanal con los mejores ingredientes. 
         Somos una panadería familiar ubicada en Km 19 Acaray, comprometidos 
@@ -191,7 +210,7 @@ nav ul li a:hover { color: #ffd700; }
     </section>
 
     <!-- PRODUCTOS -->
-    <section class="productos" id="productos">
+    <section class="productos fade-in" id="productos">
         <h2>Nuestros Productos</h2>
         <div class="categorias">
 
