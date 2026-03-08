@@ -9,21 +9,45 @@
         
         body { font-family: 'Georgia', serif; color: #3d2b1f; }
         
-        /* NAVBAR */
-        nav {
-            background-color: #5c3317;
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav .logo { color: #f5deb3; font-size: 24px; font-weight: bold; }
-        nav ul { list-style: none; display: flex; gap: 30px; }
-        nav ul li a { color: #f5deb3; text-decoration: none; font-size: 16px; }
-        nav ul li a:hover { color: #ffd700; }
+       /* NAVBAR */
+nav {
+    background-color: #5c3317;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+nav .logo { color: #f5deb3; font-size: 24px; font-weight: bold; }
+nav ul { list-style: none; display: flex; gap: 30px; }
+nav ul li a { color: #f5deb3; text-decoration: none; font-size: 16px; }
+nav ul li a:hover { color: #ffd700; }
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #f5deb3;
+    font-size: 28px;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    nav { padding: 15px 20px; }
+    .menu-btn { display: block; }
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #5c3317;
+        padding: 20px;
+        gap: 15px;
+    }
+    nav ul.abierto { display: flex; }
+}
 
         /* HERO */
         .hero {
@@ -137,9 +161,10 @@
 <body>
 
     <!-- NAVBAR -->
-    <nav>
-        <div class="logo">🍞 Panadería Shaloom</div>
-        <ul>
+   <nav>
+    <div class="logo">🍞 Panadería Shaloom</div>
+    <button class="menu-btn" onclick="this.nextElementSibling.classList.toggle('abierto')">☰</button>
+    <ul>
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#sobre">Nosotros</a></li>
             <li><a href="#productos">Productos</a></li>
