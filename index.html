@@ -213,7 +213,8 @@ nav ul li a:hover { color: #ffd700; }
     <!-- NAVBAR -->
    <nav>
     <div class="logo"><img src="logo panaderia.jpeg" style="height:45px; border-radius:50%; margin-right:10px; vertical-align:middle;">Panadería Shaloom</div>
-    
+    <div id="estado-horario" style="padding:5px 15px; border-radius:20px; font-size:14px; font-weight:bold;"></div>
+
     <button class="menu-btn" onclick="this.nextElementSibling.classList.toggle('abierto')">☰</button>
     <ul>
             <li><a href="#inicio">Inicio</a></li>
@@ -326,6 +327,30 @@ nav ul li a:hover { color: #ffd700; }
     <footer>
         <p>© 2026 Panadería Shaloom · Desde 1995 · Km 19 Acaray</p>
     </footer>
+    <script>
+    function verificarHorario() {
+        const ahora = new Date();
+        const dia = ahora.getDay(); // 0=domingo, 1=lunes...6=sabado
+        const hora = ahora.getHours();
+        const minutos = ahora.getMinutes();
+        const horaActual = hora + minutos / 60;
+
+        const estado = document.getElementById('estado-horario');
+
+        if (dia >= 1 && dia <= 6 && horaActual >= 7 && horaActual < 16) {
+            estado.textContent = '🟢 Abierto';
+            estado.style.backgroundColor = '#d4edda';
+            estado.style.color = '#155724';
+        } else {
+            estado.textContent = '🔴 Cerrado';
+            estado.style.backgroundColor = '#f8d7da';
+            estado.style.color = '#721c24';
+        }
+    }
+
+    verificarHorario();
+    setInterval(verificarHorario, 60000);
+</script>
 
 </body>
 </html>
