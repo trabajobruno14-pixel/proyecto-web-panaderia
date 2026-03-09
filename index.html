@@ -118,6 +118,31 @@ nav ul li a:hover { color: #ffd700; }
             font-size: 15px;
         }
         .categoria ul li span { color: #5c3317; font-weight: bold; }
+        /* CONTADOR */
+.contador {
+    background-color: #5c3317;
+    padding: 60px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.contador-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.numero {
+    font-size: 60px;
+    font-weight: bold;
+    color: #ffd700;
+}
+.etiqueta {
+    font-size: 18px;
+    color: #f5deb3;
+}
         /* HORARIOS */
 .horarios {
     background-color: #fff8f0;
@@ -361,7 +386,23 @@ nav ul li a:hover { color: #ffd700; }
         <div id="modal-body"></div>
     </div>
 </div>
-    <!-- HORARIOS -->
+    <!-- CONTADOR -->
+<section class="contador">
+    <div class="contador-item">
+        <span class="numero" id="anios">0</span>
+        <span class="etiqueta">Años de experiencia</span>
+    </div>
+    <div class="contador-item">
+        <span class="numero">100%</span>
+        <span class="etiqueta">Artesanal</span>
+    </div>
+    <div class="contador-item">
+        <span class="numero">🍞</span>
+        <span class="etiqueta">Horneado diario</span>
+    </div>
+</section>
+
+<!-- HORARIOS -->
 <section class="horarios" id="horarios">
     <h2>🕐 Horarios de Atención</h2>
     <div class="horarios-grid">
@@ -443,6 +484,16 @@ function cerrarModal() {
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') cerrarModal();
 });
+// CONTADOR DE AÑOS
+const anioFundacion = 1995;
+const anioActual = new Date().getFullYear();
+const anios = anioActual - anioFundacion;
+let contador = 0;
+const intervalo = setInterval(() => {
+    contador++;
+    document.getElementById('anios').textContent = contador;
+    if (contador >= anios) clearInterval(intervalo);
+}, 50);
     function verificarHorario() {
         const ahora = new Date();
         const dia = ahora.getDay(); // 0=domingo, 1=lunes...6=sabado
