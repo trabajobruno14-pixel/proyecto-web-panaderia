@@ -198,7 +198,60 @@ nav ul li a:hover { color: #ffd700; }
     opacity: 0;
     animation: fadeIn 0.8s ease forwards;
 }
-        /* FOOTER */
+    /* VER MAS */
+.ver-mas {
+    margin-top: 15px;
+    color: #5c3317;
+    font-size: 13px;
+    text-align: center;
+    opacity: 0.7;
+}
+.categoria { cursor: pointer; }
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+.modal.activo { display: flex; }
+.modal-contenido {
+    background: #fdf6ec;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+.modal-cerrar {
+    position: absolute;
+    top: 15px; right: 20px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #5c3317;
+}
+.modal-contenido h2 { color: #5c3317; margin-bottom: 15px; font-size: 26px; }
+.modal-contenido p { font-size: 16px; line-height: 1.8; color: #3d2b1f; margin-bottom: 10px; }
+.modal-contenido ul { padding-left: 20px; }
+.modal-contenido ul li { margin-bottom: 8px; font-size: 15px; color: #3d2b1f; }
+.modal-tag {
+    display: inline-block;
+    background: #5c3317;
+    color: #f5deb3;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin: 5px 3px;
+}    
+    /* FOOTER */
         footer {
             background-color: #3d2b1f;
             color: #f5deb3;
@@ -244,58 +297,70 @@ nav ul li a:hover { color: #ffd700; }
     </section>
 
     <!-- PRODUCTOS -->
-    <section class="productos fade-in" id="productos">
-        <h2>Nuestros Productos</h2>
-        <div class="categorias">
+<section class="productos" id="productos">
+    <h2>Nuestros Productos</h2>
+    <div class="categorias">
 
-            <div class="categoria">
-                <h3>🍞 Los mejores panes</h3>
-                <ul>
-                    <li>Pancito 1,5 kg <span>14.000</span></li>
-                    <li>Pancito 2,5 kg <span>23.000</span></li>
-                    <li>Galleta común 2,5 kg <span>23.000</span></li>
-                    <li>Galleta común 1,5 kg <span>14.000</span></li>
-                    <li>Cañón 2,5 kg <span>23.000</span></li>
-                    <li>Cañón 1,5 kg <span>14.000</span></li>
-                    <li>Panchi 1,5 kg <span>14.000</span></li>
-                    <li>Panchi 2,5 kg <span>23.000</span></li>
-                    <li>Galletón 1,5 kg <span>14.000</span></li>
-                    <li>Galletón 2,5 kg <span>23.000</span></li>
-                    <li>Galleta especial 2,5 kg <span>25.000</span></li>
-                    <li>Galleta especial 1,5 kg <span>15.000</span></li>
-                </ul>
-            </div>
-
-            <div class="categoria">
-                <h3>🥐 Coquitos</h3>
-                <ul>
-                    <li>Coquito surtido 1,5 kg <span>15.000</span></li>
-                    <li>Coquito surtido 2,5 kg <span>24.000</span></li>
-                    <li>Palitín 1,5 kg <span>15.000</span></li>
-                    <li>Palitín 2,5 kg <span>24.000</span></li>
-                    <li>Coquitín 1,5 kg <span>24.000</span></li>
-                    <li>Coquitín 2,5 kg <span>24.000</span></li>
-                </ul>
-            </div>
-
-            <div class="categoria">
-                <h3>🍔 Pan de Hamburguesa</h3>
-                <ul>
-                    <li>Grande x30 unidades <span>30.000</span></li>
-                    <li>Medio x15 unidades <span>15.000</span></li>
-                </ul>
-            </div>
-
-            <div class="categoria">
-                <h3>🌾 Pan Molido</h3>
-                <ul>
-                    <li>Molida 5 kg <span>30.000</span></li>
-                    <li>Molida 2,5 kg <span>15.000</span></li>
-                </ul>
-            </div>
-
+        <div class="categoria" onclick="abrirModal('panes')">
+            <h3>🍞 Los mejores panes</h3>
+            <ul>
+                <li>Pancito 1,5 kg <span>14.000</span></li>
+                <li>Pancito 2,5 kg <span>23.000</span></li>
+                <li>Galleta común 2,5 kg <span>23.000</span></li>
+                <li>Galleta común 1,5 kg <span>14.000</span></li>
+                <li>Cañón 2,5 kg <span>23.000</span></li>
+                <li>Cañón 1,5 kg <span>14.000</span></li>
+                <li>Panchi 1,5 kg <span>14.000</span></li>
+                <li>Panchi 2,5 kg <span>23.000</span></li>
+                <li>Galletón 1,5 kg <span>14.000</span></li>
+                <li>Galletón 2,5 kg <span>23.000</span></li>
+                <li>Galleta especial 2,5 kg <span>25.000</span></li>
+                <li>Galleta especial 1,5 kg <span>15.000</span></li>
+            </ul>
+            <p class="ver-mas">👆 Tocá para ver más</p>
         </div>
-    </section>
+
+        <div class="categoria" onclick="abrirModal('coquitos')">
+            <h3>🥐 Coquitos</h3>
+            <ul>
+                <li>Coquito surtido 1,5 kg <span>15.000</span></li>
+                <li>Coquito surtido 2,5 kg <span>24.000</span></li>
+                <li>Palitín 1,5 kg <span>15.000</span></li>
+                <li>Palitín 2,5 kg <span>24.000</span></li>
+                <li>Coquitín 1,5 kg <span>24.000</span></li>
+                <li>Coquitín 2,5 kg <span>24.000</span></li>
+            </ul>
+            <p class="ver-mas">👆 Tocá para ver más</p>
+        </div>
+
+        <div class="categoria" onclick="abrirModal('hamburguesa')">
+            <h3>🍔 Pan de Hamburguesa</h3>
+            <ul>
+                <li>Grande x30 unidades <span>30.000</span></li>
+                <li>Medio x15 unidades <span>15.000</span></li>
+            </ul>
+            <p class="ver-mas">👆 Tocá para ver más</p>
+        </div>
+
+        <div class="categoria" onclick="abrirModal('molido')">
+            <h3>🌾 Pan Molido</h3>
+            <ul>
+                <li>Molida 5 kg <span>30.000</span></li>
+                <li>Molida 2,5 kg <span>15.000</span></li>
+            </ul>
+            <p class="ver-mas">👆 Tocá para ver más</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- MODALES -->
+<div id="modal" class="modal" onclick="cerrarModal()">
+    <div class="modal-contenido" onclick="event.stopPropagation()">
+        <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
+        <div id="modal-body"></div>
+    </div>
+</div>
     <!-- HORARIOS -->
 <section class="horarios" id="horarios">
     <h2>🕐 Horarios de Atención</h2>
@@ -328,6 +393,56 @@ nav ul li a:hover { color: #ffd700; }
         <p>© 2026 Panadería Shaloom · Desde 1995 · Km 19 Acaray</p>
     </footer>
     <script>
+        const productos = {
+    panes: {
+        emoji: '🍞',
+        titulo: 'Los mejores panes',
+        descripcion: 'Nuestros panes son elaborados artesanalmente cada día desde las 4 de la madrugada, siguiendo recetas tradicionales que se mantienen desde 1995. Cada pieza es horneada en horno de piedra para lograr esa corteza crujiente y miga suave que nos caracteriza.',
+        ingredientes: ['Harina de trigo seleccionada', 'Agua purificada', 'Levadura natural', 'Sal marina', 'Aceite vegetal'],
+        tags: ['Artesanal', 'Horneado diario', 'Sin conservantes']
+    },
+    coquitos: {
+        emoji: '🥐',
+        titulo: 'Coquitos',
+        descripcion: 'Los coquitos son nuestro producto estrella para los más golosos. Elaborados con coco rallado fresco y una masa especial, son perfectos para el desayuno o la merienda. Crujientes por fuera y suaves por dentro, ideales para acompañar con mate.',
+        ingredientes: ['Harina de trigo', 'Coco rallado fresco', 'Azúcar', 'Manteca', 'Huevos frescos', 'Esencia de vainilla'],
+        tags: ['Con coco', 'Dulce', 'Para merienda']
+    },
+    hamburguesa: {
+        emoji: '🍔',
+        titulo: 'Pan de Hamburguesa',
+        descripcion: 'Especialmente desarrollados para hamburgueserías y cocinas profesionales. Nuestro pan de hamburguesa tiene la consistencia perfecta para aguantar los jugos sin deshacerse, con una textura suave que complementa cualquier relleno. Disponibles en tamaño grande y mediano.',
+        ingredientes: ['Harina de trigo premium', 'Leche', 'Manteca', 'Azúcar', 'Levadura', 'Semillas de sésamo'],
+        tags: ['Para negocios', 'Textura firme', 'Pedido por cantidad']
+    },
+    molido: {
+        emoji: '🌾',
+        titulo: 'Pan Molido',
+        descripcion: 'Nuestro pan molido es ideal para empanizar, rebozar y darle ese toque crujiente a tus recetas. Elaborado a partir de nuestros propios panes artesanales, garantizamos una textura uniforme y un sabor neutro que realza cualquier preparación culinaria.',
+        ingredientes: ['Pan artesanal propio', 'Secado natural', 'Sin aditivos'],
+        tags: ['Para cocinar', 'Textura uniforme', 'Sin conservantes']
+    }
+};
+
+function abrirModal(tipo) {
+    const p = productos[tipo];
+    document.getElementById('modal-body').innerHTML = `
+        <h2>${p.emoji} ${p.titulo}</h2>
+        <p>${p.descripcion}</p>
+        <p><strong>🌿 Ingredientes principales:</strong></p>
+        <ul>${p.ingredientes.map(i => `<li>${i}</li>`).join('')}</ul>
+        <div style="margin-top:15px">${p.tags.map(t => `<span class="modal-tag">${t}</span>`).join('')}</div>
+    `;
+    document.getElementById('modal').classList.add('activo');
+}
+
+function cerrarModal() {
+    document.getElementById('modal').classList.remove('activo');
+}
+
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') cerrarModal();
+});
     function verificarHorario() {
         const ahora = new Date();
         const dia = ahora.getDay(); // 0=domingo, 1=lunes...6=sabado
